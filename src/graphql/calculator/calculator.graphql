@@ -1,0 +1,20 @@
+enum OPERATION {
+  sum
+  subtract
+  divide
+  multiply
+}
+
+input CalculateInput {
+  n1: Float!
+  operation: OPERATION!
+  n2: Float!
+}
+
+type CalculatePayload {
+  response: Float
+}
+
+type Mutation {
+  calculate(input: CalculateInput!): CalculatePayload!
+}

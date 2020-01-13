@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "graphql-api-scripts dev",
     "start": "graphql-api-scripts start",
-    "build": "graphql-api-scripts build",
+    "build": "graphql-api-scripts codegen && graphql-api-scripts build",
     "test": "graphql-api-scripts codegen && jest --runInBand"
   },
   "author": "",

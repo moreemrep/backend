@@ -1,3 +1,3 @@
-import { RedisRepository } from '../plugins/repository/redis-repository-plugin'
+import { RedisRepository } from 'redis-repository-plugin'
 
 export default RedisRepository()

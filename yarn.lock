@@ -3452,6 +3452,13 @@ firebase-admin@^8.9.0:
     "@google-cloud/firestore" "^3.0.0"
     "@google-cloud/storage" "^4.1.2"
 
+firebase-service-plugin@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/firebase-service-plugin/-/firebase-service-plugin-1.0.1.tgz#f7a10860211f32bb256ff9a6ba0de28377dab72a"
+  integrity sha512-JqwG5lfwZyANSmFepE35XtaFvPajoL4GnOuw68cjeudwRcbqXJz0i3X7P2aqbOEPUZ1NYt7iURF81UWSG7MgCA==
+  dependencies:
+    firebase-admin "^8.9.0"
+
 first-chunk-stream@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/first-chunk-stream/-/first-chunk-stream-2.0.0.tgz#1bdecdb8e083c0664b91945581577a43a9f31d70"
@@ -3819,10 +3826,10 @@ graphql-api-scripts-dev@^0.0.25:
     tsc-prog "^2.1.0"
     typescript "^3.7.4"
 
-graphql-api-scripts@^0.0.48:
-  version "0.0.48"
-  resolved "https://registry.yarnpkg.com/graphql-api-scripts/-/graphql-api-scripts-0.0.48.tgz#e5f38cef5b53c3c8e741df6cafa74e2bafbc4f23"
-  integrity sha512-mtgvIyyavQVVmK7XX+J+J9FzSmRj8zgKVA2kRIXIU74M3lEGXrbQjOB/2rbWaWANpfkK+Q1ODjOxly6XYBYvHQ==
+graphql-api-scripts@^0.0.49:
+  version "0.0.49"
+  resolved "https://registry.yarnpkg.com/graphql-api-scripts/-/graphql-api-scripts-0.0.49.tgz#d1ef1ae9f3e0a57088def970df58a91a82fdc505"
+  integrity sha512-BeW3BtqHo8t54WJCu4jA1ks8qgViRDZZAN5Oq3ywPOJGXW+N4GlmhAJ3LJq2Yvsw+OpjPN+4VLwddRoOQEcy5g==
   dependencies:
     apollo-server-express "^2.9.15"
     express "^4.17.1"
@@ -5639,6 +5646,15 @@ mongoose-legacy-pluralize@1.0.2:
   resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
   integrity sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
 
+mongoose-repository-plugin@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/mongoose-repository-plugin/-/mongoose-repository-plugin-1.0.7.tgz#28b9818a83d2fb08a7bc7ef2b45e9d2968272c94"
+  integrity sha512-pYITebuglgp94oqtPdBM+3CkSN8p59peo2uxXlwo5NpdffFm1/hS5dih5aWq9GoPQ2kV8AocS4OGWr6bKVAOUg==
+  dependencies:
+    folder-utils "^2.0.2"
+    graphql-api-scripts "^0.0.49"
+    mongoose "^5.8.7"
+
 mongoose@^5.8.7:
   version "5.8.7"
   resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.8.7.tgz#d175f8ac4c8ed7bf57b71aa4980aaa3525b923b2"
@@ -6561,6 +6577,14 @@ recursive-readdir@2.2.2:
   integrity sha512-nRCcW9Sj7NuZwa2XvH9co8NPeXUBhZP7CRKJtU+cS6PW9FpCIFoI5ib0NT1ZrbNuPoRy0ylyCaUL8Gih4LSyFg==
   dependencies:
     minimatch "3.0.4"
+
+redis-repository-plugin@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/redis-repository-plugin/-/redis-repository-plugin-1.0.1.tgz#9696e7aae77c1b50fa6439d42ee740d46d2388f3"
+  integrity sha512-fQligDTuzS8WpyMYnr92gk2jjJHB8h7L4zXEqQlnwUvWwOWapVcxaVxdeD/1RoGfRNcbMKt0CYn0X1RJeGFncw==
+  dependencies:
+    graphql-api-scripts "^0.0.49"
+    tedis "^0.1.10"
 
 regenerator-runtime@^0.10.5:
   version "0.10.5"

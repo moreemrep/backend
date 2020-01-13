@@ -2,7 +2,7 @@ import { Input } from '../../generated/types'
 import { Operation, CalculateInput, CalculatePayload } from '../../generated/schema'
 import { Context } from '../../types'
 
-exports.resolver = {
+export const resolver = {
   Mutation: {
     calculate: async (_, { input }: Input<CalculateInput>, context: Context): Promise<CalculatePayload> => {
       let response = 0

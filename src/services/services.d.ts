@@ -1,5 +1,5 @@
-import { FirebaseService } from './firebase-service'
+import { Firebase } from "firebase-service-plugin"
 
 export interface Services {
-  firebase: FirebaseService;
+  firebase: Firebase;
 }

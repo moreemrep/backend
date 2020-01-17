@@ -1,5 +1,5 @@
 import { MongooseRepository } from './mongoose-repository'
-import { RedisRepositor } from 'redis-repository-plugin';
+import { RedisRepositor } from 'redis-repository-plugin'
 
 export interface Repositories {
   mongoose: MongooseRepository;

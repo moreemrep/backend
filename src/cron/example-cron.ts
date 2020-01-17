@@ -1,4 +1,4 @@
-import { Cron } from "../generated/types";
+import { Cron } from '../generated/types'
 
 export default ({ schedule, repositories, services, utils }: Cron): void => {
   schedule('* * * * *', () => {

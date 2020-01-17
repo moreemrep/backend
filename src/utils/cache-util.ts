@@ -6,6 +6,7 @@ export interface CacheUtil {
 
 export default ({ repositories }: UtilProps): CacheUtil => {
   const { redis } = repositories
+
   return {
     getOrCache: async (key, getFunction) => {
       let value = await redis.get(key)

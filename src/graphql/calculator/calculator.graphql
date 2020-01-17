@@ -16,5 +16,5 @@ type CalculatePayload {
 }
 
 type Mutation {
-  calculate(input: CalculateInput!): CalculatePayload!
+  calculate(input: CalculateInput!): CalculatePayload! @auth
 }

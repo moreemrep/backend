@@ -6615,10 +6615,10 @@ recursive-readdir@2.2.2:
   dependencies:
     minimatch "3.0.4"
 
-redis-repository-plugin@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/redis-repository-plugin/-/redis-repository-plugin-1.0.1.tgz#9696e7aae77c1b50fa6439d42ee740d46d2388f3"
-  integrity sha512-fQligDTuzS8WpyMYnr92gk2jjJHB8h7L4zXEqQlnwUvWwOWapVcxaVxdeD/1RoGfRNcbMKt0CYn0X1RJeGFncw==
+redis-repository-plugin@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/redis-repository-plugin/-/redis-repository-plugin-1.0.2.tgz#e00a0c4a1419c9c5fca01d97e0d88baee93e7fae"
+  integrity sha512-8CkJ4GLOXApqj7+qAa6uciYSNf2EcD3GB9PNnEFbxqgud11OJm4u4Zf9O7rGinXZ9yHMVa3eEdJQ55EdVSWeWw==
   dependencies:
     graphql-api-scripts "^0.0.49"
     tedis "^0.1.10"

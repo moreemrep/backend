@@ -1,5 +1,5 @@
 import { Operation, CalculateInput } from '../src/generated/schema'
-import { createQuery } from 'graphql-api-scripts';
+import { createQuery } from 'graphql-api-scripts'
 
 const query = createQuery<CalculateInput>(`
 mutation ($input: CalculateInput!){
@@ -10,7 +10,7 @@ mutation ($input: CalculateInput!){
 `)
 
 describe('mutation calculate', () => {
-  it('should sum', () => {
+  it('should sum', async () => {
     query.variables = {
       input: {
         n1: 10,
@@ -18,8 +18,16 @@ describe('mutation calculate', () => {
         n2: 15
       }
     }
-    return global.request(query)
-      .expect(res => expect(res.body.data.payload.response).toBe(25))
+    await global.requestAuth(global.users.registered, query)
+      .expect(res => {
+        expect(res.body.data.payload.response).toBe(25)
+      })
+
+    // test cache
+    return global.requestAuth(global.users.registered, query)
+      .expect(res => {
+        expect(res.body.data.payload.response).toBe(25)
+      })
   })
 
   it('should divide', () => {
@@ -30,7 +38,7 @@ describe('mutation calculate', () => {
         n2: 15
       }
     }
-    return global.request(query)
+    return global.requestAuth(global.users.registered, query)
       .expect(res => expect(res.body.data.payload.response).toBe(2))
   })
 
@@ -42,7 +50,7 @@ describe('mutation calculate', () => {
         n2: 15
       }
     }
-    return global.request(query)
+    return global.requestAuth(global.users.registered, query)
       .expect(res => expect(res.body.data.payload.response).toBe(5))
   })
 
@@ -54,7 +62,7 @@ describe('mutation calculate', () => {
         n2: 15
       }
     }
-    return global.request(query)
+    return global.requestAuth(global.users.registered, query)
       .expect(res => expect(res.body.data.payload.response).toBe(150))
   })
 })

@@ -1,5 +1,5 @@
-import { Context } from '../../types'
 import { CODES } from '../../errors'
+import { Context } from '../../generated/types';
 
 export default {
   async auth (next, _, requires, context: Context) {

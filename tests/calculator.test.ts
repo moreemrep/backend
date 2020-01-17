@@ -1,7 +1,7 @@
-import { graphql } from './queryBuilder'
 import { Operation, CalculateInput } from '../src/generated/schema'
+import { createQuery } from 'graphql-api-scripts';
 
-const query = graphql<CalculateInput>(`
+const query = createQuery<CalculateInput>(`
 mutation ($input: CalculateInput!){
   payload: calculate(input: $input) {
     response
@@ -10,7 +10,7 @@ mutation ($input: CalculateInput!){
 `)
 
 describe('mutation calculate', () => {
-  it('deve realizar soma', () => {
+  it('should sum', () => {
     query.variables = {
       input: {
         n1: 10,
@@ -22,7 +22,7 @@ describe('mutation calculate', () => {
       .expect(res => expect(res.body.data.payload.response).toBe(25))
   })
 
-  it('deve realizar divisao', () => {
+  it('should divide', () => {
     query.variables = {
       input: {
         n1: 30,
@@ -34,7 +34,7 @@ describe('mutation calculate', () => {
       .expect(res => expect(res.body.data.payload.response).toBe(2))
   })
 
-  it('deve realizar subtracao', () => {
+  it('should subtract', () => {
     query.variables = {
       input: {
         n1: 20,
@@ -46,7 +46,7 @@ describe('mutation calculate', () => {
       .expect(res => expect(res.body.data.payload.response).toBe(5))
   })
 
-  it('deve realizar multiplicacao', () => {
+  it('should mutiply', () => {
     query.variables = {
       input: {
         n1: 10,

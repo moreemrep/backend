@@ -1,4 +1,4 @@
-import { UtilProps } from './utils'
+import { UtilProps } from '../generated/types'
 
 export interface CacheUtil {
   getOrCache: (key: string, getFunction: () => Promise<string>) => Promise<string>;

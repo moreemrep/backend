@@ -1,6 +1,7 @@
 import { app, repositories } from 'graphql-api-scripts'
 import { Repositories } from '../../src/repositories/repositories'
 import { Server } from 'http'
+import { Role } from '../../src/generated/schema'
 
 const { mongoose, redis }: Repositories = repositories
 const { User } = mongoose
@@ -12,7 +13,9 @@ beforeAll(done => {
 })
 
 beforeEach(async done => {
-  await User.create({ uid: '123', email: 'test@test.com' })
+  await User.create({ uid: '123', email: 'admin@test.com', role: Role.Admin })
+  await User.create({ uid: '1234', email: 'manager@test.com', role: Role.Manager })
+  await User.create({ uid: '12345', email: 'user@test.com' })
   done()
 })
 

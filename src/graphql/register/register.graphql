@@ -1,0 +1,9 @@
+input RegisterInput {
+  name: String!
+}
+
+type RegisterPayload {
+  id: ID
+  success: Boolean!
+  error: String
+}

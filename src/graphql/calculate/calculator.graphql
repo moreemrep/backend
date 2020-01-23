@@ -14,7 +14,3 @@ input CalculateInput {
 type CalculatePayload {
   response: Float
 }
-
-type Mutation {
-  calculate(input: CalculateInput!): CalculatePayload! @auth
-}

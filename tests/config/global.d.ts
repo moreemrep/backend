@@ -7,10 +7,12 @@ export {}
 declare global {
   namespace NodeJS {
     interface Global {
-      request: (query: Query<any>) => Test;
-      requestAuth: (user: string, query: Query<any>) => Test;
+      request: (query: Query<any>, token?: string) => Test;
       users: {
-        registered: string;
+        admin: string;
+        manager: string;
+        user: string;
+        unregistered: string;
       };
     }
   }

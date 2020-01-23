@@ -1,0 +1,4 @@
+type Mutation {
+  calculate(input: CalculateInput!): CalculatePayload! @auth(role: [ADMIN])
+  register(input: RegisterInput!): RegisterPayload!
+}

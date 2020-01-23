@@ -1,5 +1,6 @@
 import { Operation, CalculateInput } from '../src/generated/schema'
 import { createQuery } from 'graphql-api-scripts'
+import { CODES } from '../src/errors'
 
 const query = createQuery<CalculateInput>(`
 mutation ($input: CalculateInput!){
@@ -10,6 +11,8 @@ mutation ($input: CalculateInput!){
 `)
 
 describe('mutation calculate', () => {
+  const { request, users: { admin, user } } = global
+
   it('should sum', async () => {
     query.variables = {
       input: {
@@ -18,16 +21,15 @@ describe('mutation calculate', () => {
         n2: 15
       }
     }
-    await global.requestAuth(global.users.registered, query)
-      .expect(res => {
-        expect(res.body.data.payload.response).toBe(25)
-      })
+
+    await request(query, admin).expect(res => {
+      expect(res.body.data.payload.response).toBe(25)
+    })
 
     // test cache
-    return global.requestAuth(global.users.registered, query)
-      .expect(res => {
-        expect(res.body.data.payload.response).toBe(25)
-      })
+    return request(query, admin).expect(res => {
+      expect(res.body.data.payload.response).toBe(25)
+    })
   })
 
   it('should divide', () => {
@@ -38,8 +40,9 @@ describe('mutation calculate', () => {
         n2: 15
       }
     }
-    return global.requestAuth(global.users.registered, query)
-      .expect(res => expect(res.body.data.payload.response).toBe(2))
+    return request(query, admin).expect(res => {
+      expect(res.body.data.payload.response).toBe(2)
+    })
   })
 
   it('should subtract', () => {
@@ -50,11 +53,12 @@ describe('mutation calculate', () => {
         n2: 15
       }
     }
-    return global.requestAuth(global.users.registered, query)
-      .expect(res => expect(res.body.data.payload.response).toBe(5))
+    return request(query, admin).expect(res => {
+      expect(res.body.data.payload.response).toBe(5)
+    })
   })
 
-  it('should mutiply', () => {
+  it('should multiply', () => {
     query.variables = {
       input: {
         n1: 10,
@@ -62,7 +66,20 @@ describe('mutation calculate', () => {
         n2: 15
       }
     }
-    return global.requestAuth(global.users.registered, query)
-      .expect(res => expect(res.body.data.payload.response).toBe(150))
+    return request(query, admin).expect(res => {
+      expect(res.body.data.payload.response).toBe(150)
+    })
+  })
+
+  it('should not multiply with wrong role', () => {
+    return request(query, user).expect(res => {
+      expect(res.body.errors[0].message).toBe(CODES.UNAUTHORIZED)
+    })
+  })
+
+  it('should not multiply without user', () => {
+    return request(query).expect(res => {
+      expect(res.body.errors[0].message).toBe(CODES.UNAUTHENTICATED)
+    })
   })
 })

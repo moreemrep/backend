@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "graphql-api-scripts dev",
     "start": "graphql-api-scripts start",
-    "build": "graphql-api-scripts codegen && graphql-api-scripts build",
-    "test": "graphql-api-scripts codegen && jest --runInBand"
+    "prebuild": "graphql-api-scripts codegen",
+    "build": "graphql-api-scripts build",
+    "pretest": "graphql-api-scripts codegen",
+    "test": "jest --runInBand",
+    "codegen": "graphql-api-scripts codegen"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +21,7 @@
     "redis-repository-plugin": "^1.0.2"
   },
   "devDependencies": {
+    "@playlyfe/gql": "^2.6.2",
     "@types/graphql-relay": "^0.4.11",
     "@types/jest": "^24.0.25",
     "@types/mongoose": "^5.5.41",

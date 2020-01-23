@@ -1,6 +1,6 @@
-import { Operation, CalculateInput } from '../src/generated/schema'
 import { createQuery } from 'graphql-api-scripts'
-import { CODES } from '../src/errors'
+import { Operation, CalculateInput } from '~/generated/schema'
+import { CODES } from '~/errors'
 
 const query = createQuery<CalculateInput>(`
 mutation ($input: CalculateInput!){

@@ -10,6 +10,8 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts'
   ],
-  preset: 'ts-jest'
-
+  preset: 'ts-jest',
+  moduleNameMapper: {
+    '~/(.*)': '<rootDir>/src/$1'
+  }
 }

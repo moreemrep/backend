@@ -1,6 +1,6 @@
-import { RegisterInput } from '../src/generated/schema'
 import { createQuery } from 'graphql-api-scripts'
-import { CODES } from '../src/errors'
+import { RegisterInput } from '~/generated/schema'
+import { CODES } from '~/errors'
 
 const query = createQuery<RegisterInput>(`
 mutation ($input: RegisterInput!){

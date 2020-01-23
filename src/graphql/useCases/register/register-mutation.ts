@@ -1,7 +1,7 @@
 import { Input } from 'graphql-api-scripts'
-import { RegisterInput, RegisterPayload } from '../../generated/schema'
-import { Context } from '../../generated/types'
-import { CODES } from '../../errors'
+import { Context } from '~/generated/types'
+import { RegisterInput, RegisterPayload } from '~/generated/schema'
+import { CODES } from '~/errors'
 
 export const resolver = {
   Mutation: {
